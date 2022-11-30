@@ -1,0 +1,382 @@
+.h1 {
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left: 150px;
+    text-align: center;
+  }
+  
+  .LeftPanel {
+    margin-top: 8px;
+    background-color: #f5f5f5;
+    height: 750px;
+    width: 300px;
+  }
+  
+  .LeftPanelOptions {
+    padding-top: 60px;
+    padding-left: 100px;
+    padding-right: 20px;
+    font-weight: 500;
+    text-align: right;
+    font-size: 20px;
+  }
+  
+  .JobSearch {
+    background-color: #F5F5F5;
+    height: 8.8em;
+    width: 1020px;
+    margin-top: -46.9em;
+    margin-left: 305px;
+  }
+  
+  
+  
+  .JobSearch label {
+    margin-left: 9px;
+    font-family: Lato;
+    font-size: 20px;
+  }
+  
+  
+  
+  .JobSearch input[type=search] {
+    float: inline-start;
+    height: 40px;
+    width: 230px;
+    text-align: center;
+    margin-left: 30px;
+  }
+  
+  
+  
+  .JobSearch input::placeholder {
+    font-size: 15px;
+  }
+  
+  
+  
+  .JobSearch input[type=button] {
+    height: 30px;
+    width: 100px;
+    margin-left: 300px;
+    border: 1px solid;
+    border-radius: 2.5em;
+    cursor: pointer;
+  }
+  
+  .topsection {
+    background-color: white;
+    height: 32px;
+    width: 100%;
+    display: flex;
+  }
+  .section1{
+    padding-top: 18px;
+    width: 89%;
+    margin-left: 600px;
+    }
+    .section2{
+    padding-top: 18px;
+    width: 8%;
+    
+    }
+  .section3{
+    width: 10%;
+  }
+  
+  .BodySection {
+    height: 610px;
+    width: 1018px;
+    background-color: #F5F5F5;
+    margin-top: 5px;
+    margin-left: 305px;
+  }
+  
+  /* Style the tab */
+  .tab {
+    overflow: hidden;
+    border: none;
+    background-color: #F5F5F5;
+    margin-left: 180px;
+    margin-top: -28px;
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 12px;
+    margin-left: 85px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button .active {
+    background-color: #ddd;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    padding: 6px 12px;
+    border: none;
+    border-top: none;
+    background-color: #F5F5F5;
+  }
+  
+  #table1 {
+    border-spacing: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  }
+  
+  #table1 tr,
+  #table1 th,
+  #table1 td {
+    text-align: center;
+  }
+  
+  #table1 th {
+    width: 9em;
+    font-size: 15px;
+    font-weight: 550;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  #table1 tr:nth-child(n+1) {
+    background-color: white;
+  }
+  
+  #table1 tr {
+    height: 45px;
+  }
+  
+  .activeTab {
+    color: skyblue;
+  }
+  
+  .chat-btn {
+    position: fixed;
+    right: 14px;
+    bottom: 30px;
+    cursor: pointer;
+  }
+  
+  
+  
+  .chat-btn .close {
+    display: none
+  }
+  
+  .chat-btn i {
+    transition: all 0.9s ease
+  }
+  
+  #check:checked~.chat-btn i {
+    display: block;
+    pointer-events: auto;
+    transform: rotate(180deg)
+  }
+  
+  #check:checked~.chat-btn .comment {
+    display: none
+  }
+  
+  .chat-btn i {
+    font-size: 22px;
+    color: #fff !important
+  }
+  
+  .chat-btn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color: #F69659;
+    color: #fff;
+    font-size: 22px;
+    border: none
+  }
+  
+  .wrapper {
+    position: fixed;
+    right: 20px;
+    bottom: 100px;
+    width: 450px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    opacity: 0;
+    transition: all 0.4s
+  }
+  
+  #check:checked~.wrapper {
+    opacity: 1
+  }
+  
+  .header {
+    padding: 13px 69PX;
+    background-color: #F69659;
+    border-radius: 5px 5px 0px 0px;
+    margin-bottom: 2px;
+    color: #fff
+  }
+  
+  .chat-form {
+    padding: 15px
+  }
+  
+  .chat-form input,
+  textarea,
+  button {
+    margin-bottom: 10px
+  }
+  
+  .chat-form textarea {
+    resize: none
+  }
+  
+  .form-control:focus,
+  .btn:focus {
+    box-shadow: none
+  }
+  
+  #wrapper {
+    display: none;
+  }
+  
+  
+  #check {
+    display: none !important
+  }
+  
+  .mt-3 {
+    margin-left: 71%;
+    margin-top: -4%;
+  }
+  
+  
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    bottom: 2;
+    width: 100%;
+    height: 90%;
+    /* Full height */
+  
+    /* overflow: scroll; */
+    /* Enable scroll if needed */
+    /* background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);  */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #F69659;
+    width: 40%;
+    overflow-y: Auto !important;
+    height: 42%
+  }
+  
+  /* .mr-100 {
+    margin-right: 100px;
+  } */
+  
+  /* The Close Button */
+  .close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: -15px;
+  }
+  
+  .popupModel {
+    background-color: #F69659;
+    color: #fff;
+    margin: -20px !important;
+    padding: 3px !important;
+  
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: white;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  background-image: url("src\assets\Dropdown Image.png");
+  background-repeat: no-repeat;
+}
+
+/* The container <div> - needed to position the dropdown content */
+#dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
+
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+.dropdown:hover .dropbtn {
+  background-color: white;
+}
