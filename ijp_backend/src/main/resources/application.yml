@@ -1,0 +1,52 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          azure-client:
+            provider: azure
+            client-id: bf06b983-d09e-477d-a2f5-dfbbde82532a
+            # client-secret: F5S7Q~EC_Er0OeHkyNuUOC0zmHOu_i2XKLG96
+            client-secret: FBx8Q~vji.fKFgzY.81_rPCSi1mWN1Q5cW35valt
+            authorization-grant-type: authorization_code
+            #redirect-uri: https://apps.arigs.com/ijp/callback
+            redirect-uri: http://localhost/ijp/callback
+            scope:
+            - openid
+            - profile
+            - email            
+        provider:
+         azure: 
+            authorization-uri: https://login.microsoftonline.com/organizations/oauth2/v2.0/authorize
+            token-uri: https://login.microsoftonline.com/organizations/oauth2/v2.0/token
+            jwk-set-uri: https://login.microsoftonline.com/organizations/discovery/v2.0/keys
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/ijp
+    username: postgres
+    password: 1234
+    
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non-contextual-creation: true  
+        dialect: org.hibernate.dialect.PostgreSQLDialect   
+    hibernate:
+      ddl-auto: update  
+  mail:
+    host: smtp.office365.com
+    port: 587
+    username: sshah@arigs.com
+    password: grplrkxmrxzfsbbz
+    tls: true
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+      ssl.trust: smtp.office365.com
+server:
+   port: 8080
+project:
+    environment: prod
+    adminemail: mkayum@arigs.com
