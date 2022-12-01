@@ -1,0 +1,149 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="./history.component.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <div class="topsection">
+    <div class="section3">
+    <img src="../../assets/AriLogo.png" style="height:61px ;background-size: 9em;
+    background-repeat: no-repeat;margin-top: -8px; ;"></div>
+    <div class="section1">
+    <label  style="color: #F69659;font-size: 20px; font-family: Verdana, Geneva, Tahoma, sans-serif">
+      Welcome {{name}}!
+    </label>
+  </div>
+  <div class="section2">
+    <button (click)="logout()" style="font-size: 18px; background-color:white;outline: none;border: none;color: #F69659;
+           font-family: Verdana, Geneva, Tahoma, sans-serif;cursor: pointer;
+           ">Logout</button>
+  </div>
+  </div>
+  <div class="LeftPanel">
+    <h1
+      style="margin-left: 40px;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+      MY <br>
+      <label style="color: #F69659;">DASHBOARD</label>
+    </h1>
+    <div class="LeftPanelOptions">
+
+      <br>
+
+      <ng-container *ngIf="role==1">
+      <label style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; cursor: pointer;"
+        routerLink="/admin" routerLinkActive="activeTab">HOME</label>
+      </ng-container>
+
+      <ng-container *ngIf="role==2">
+        <label style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; cursor: pointer;"
+          routerLink="/hiringManager" routerLinkActive="activeTab">HOME</label>
+        </ng-container>
+        <br><br>
+      <br>
+
+      <label
+        style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; cursor: pointer;"
+        routerLink="/applications" routerLinkActive="activeTab">APPLICATIONS
+      </label>
+      
+      <br><br>
+      <br><label
+        style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;cursor: pointer;"
+        routerLink="/history" routerLinkActive="activeTab">HISTORY</label><br><br><br>
+        <ng-container *ngIf="role==1">
+          <label
+          style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; cursor: pointer;"
+          routerLink="/role" routerLinkActive="activeTab">ROLE</label><br><br>
+          <br><label
+          style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;cursor: pointer;"
+          routerLink="/department" routerLinkActive="activeTab">DEPARTMENT</label>
+        </ng-container>  
+    </div>
+    <span>
+      <input type="checkbox" id="check">
+      <label class="chat-btn" for="check">
+        <i class="fa fa-commenting-o comment" (click)="chatClicked()"></i> <i class="fa fa-close close"
+          (click)="chatClosed()"></i> </label>
+      <div class="wrapper" id="wrapper">
+        <div class="header"> <label
+            style="margin-left: 80px;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 600;">
+            ARi BOT ASSISTANT</label>
+        </div>
+        <iframe
+          src='https://webchat.botframework.com/embed/ARI_Chat_Bot?s=OrJObAnesi4.UrqlRm2tyYVzdYFb7Msf3tP0jWajFvO1wU98eDeAc2o'
+          style='min-width: 300px; width: 100%; min-height: 500px'></iframe>
+      </div>
+    </span>
+  </div>
+
+  <div class="JobSearch"><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: 500;
+    ">SEARCH</label><br><br>
+     <div class="space">
+     <input type="search" placeholder="Type Something Here..." [(ngModel)]="filterTerm"><i
+       style="font-size:15px;margin-left:1em; font-family: Verdana, Geneva, Tahoma, sans-serif"></i>
+     </div>
+   </div>
+
+  <div class="BodySection"><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <label style="margin-left: 2em; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight:600;
+  ">Hello {{name}} ,</label>
+    &nbsp;<label style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight:600;
+">Your activity...
+    </label>
+    <br><br>
+    <label style="font-weight:normal; margin-left: 11px;margin-top: 7px;"></label>
+    <div id="all" class="tabcontent">
+      <div class="names">
+        <table id="table1">
+          <tr style="background-color:#f5f5f5;">
+            <th></th>
+            <th>Job Posted For Position</th>
+            <th>Job Type</th>
+            <th>Reporting Manager Assigned</th>
+            <th>Experience<br>(IN YEARS)</th>
+            <th>Job Posted On</th>
+          </tr><br>
+          <tr *ngFor="
+          let getJobs of  getPostedJobs | filter : filterTerm
+              | paginate
+                : {
+                    itemsPerPage:pageSize,
+                    currentPage: page,
+                    totalItems: count
+                  };paginate:config,
+            let i = index
+          ">
+            <td><i style="font-size:24px ;color: #F69659;" class="fa">&#xf1da;</i></td>
+            <td>{{getJobs.jobName}}.</td>
+            <td>{{getJobs.jobType}}</td>
+            <td>{{getJobs.reportingManager}} </td>
+            <td>{{getJobs.jobExperience}}</td>
+            <td>{{getJobs.jobDate}}</td>
+          </tr>
+
+        </table>
+
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+      </pagination-controls>
+      <div class="mt-3">
+        <label>Select no of entries : </label>
+        <select (change)="handlePageSizeChange($event)">
+          <option *ngFor="let size of pageSizes" [ngValue]="size">
+            {{ size }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
