@@ -1,44 +1,43 @@
 package ijp.services;
 
+
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 import ijp.models.JobPost;
 import ijp.repository.JobPostRepository;
 
-// Service for 'JobPost' Entity
 @Service
-public class JobPostService {
-
+public class JobPostServices {
 	@Autowired
-	private JobPostRepository repository;
+	private JobPostRepository jobPostRepository;
 	
 	public List<JobPost> getJobs() {
-		return repository.findAll();
+		return jobPostRepository.findAll();
 	}
 	
 	public Optional<JobPost> getJobById(Integer jobId) {
-		return repository.findById(jobId);
+		return jobPostRepository.findById(jobId);
 	}
 	
 	public JobPost postJobService(JobPost jobPost) {
-		return repository.save(jobPost);
+		return jobPostRepository.save(jobPost);
 	}
 	
-	public boolean doesJobExists(Integer jobId) {
-		Optional<JobPost> jobOptional = repository.findById(jobId);
+	public boolean isJobExists(Integer jobId) {
+		Optional<JobPost> jobOptional = jobPostRepository.findById(jobId);
 		return jobOptional.isPresent();
 	}
 	
 	public void deleteJobService(Integer jobId) {
-		repository.deleteById(jobId);
+		jobPostRepository.delAppliliedJobPost(jobId);
+		jobPostRepository.deleteById(jobId);
 	}
 	
-		public JobPost getjobById(Integer jobId) {
-		return repository.findByJobId(jobId);
-		}
+	public JobPost getjobById(Integer jobId) {
+		return jobPostRepository.findByJobId(jobId);
+	}
 }

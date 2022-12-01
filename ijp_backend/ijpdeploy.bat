@@ -1,1 +1,1 @@
-copy target\ijpservices.war "C:\Tomcat 9\apache-tomcat-9.0.56\webapps"
+copy target\ijpservices.war "C:\Users\mkayum\Documents\Tomcat 9\webapps"

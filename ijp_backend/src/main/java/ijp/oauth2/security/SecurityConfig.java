@@ -1,6 +1,7 @@
 package ijp.oauth2.security;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 
 import javax.servlet.ServletException;
@@ -102,4 +103,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		response.getWriter()
 				.write(objectMapper.writeValueAsString(Collections.singletonMap("error", "Unauthenticated")));
 	}
+	
 }

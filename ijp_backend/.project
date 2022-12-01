@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>ijp_backend_old</name>
+	<name>ijp_backend_new</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -41,7 +41,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1669006164681</id>
+			<id>1667765851050</id>
 			<name></name>
 			<type>30</type>
 			<matcher>

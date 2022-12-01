@@ -4,9 +4,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
  
-import java.util.ArrayList;
-import java.util.List;
- 
 @Configuration
 @EnableConfigurationProperties
 @ConfigurationProperties("project")
@@ -14,6 +11,7 @@ public class Config {
  
     private String environment;
     private String adminEmail;
+	private String name;
  
     public String getEnvironment() {
         return environment;
@@ -23,7 +21,15 @@ public class Config {
         this.environment = environment;
     }
 
-    public void setAdminEmail(String adminEmail) {
+    public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setAdminEmail(String adminEmail) {
         this.adminEmail = adminEmail;
     }
 

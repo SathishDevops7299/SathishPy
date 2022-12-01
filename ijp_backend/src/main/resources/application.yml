@@ -6,11 +6,12 @@ spring:
           azure-client:
             provider: azure
             client-id: bf06b983-d09e-477d-a2f5-dfbbde82532a
-            # client-secret: F5S7Q~EC_Er0OeHkyNuUOC0zmHOu_i2XKLG96
+#            client-secret: F5S7Q~EC_Er0OeHkyNuUOC0zmHOu_i2XKLG9
             client-secret: FBx8Q~vji.fKFgzY.81_rPCSi1mWN1Q5cW35valt
             authorization-grant-type: authorization_code
             #redirect-uri: https://apps.arigs.com/ijp/callback
             redirect-uri: http://localhost/ijp/callback
+            # redirect-uri: http://localhost:42000/callback
             scope:
             - openid
             - profile
@@ -22,19 +23,22 @@ spring:
             jwk-set-uri: https://login.microsoftonline.com/organizations/discovery/v2.0/keys
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/ijp
+    url: jdbc:postgresql://localhost:5432/ijp2
     username: postgres
     password: 1234
     
   jpa:
     properties:
       hibernate:
+        globally_quoted_identifiers: true
         jdbc:
           lob:
             non-contextual-creation: true  
         dialect: org.hibernate.dialect.PostgreSQLDialect   
     hibernate:
-      ddl-auto: update  
+      ddl-auto: update
+      naming:  
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
   mail:
     host: smtp.office365.com
     port: 587
@@ -45,8 +49,10 @@ spring:
       auth: true
       starttls.enable: true
       ssl.trust: smtp.office365.com
+         
 server:
    port: 8080
 project:
     environment: prod
     adminemail: mkayum@arigs.com
+    name: Md Shabbir Ali

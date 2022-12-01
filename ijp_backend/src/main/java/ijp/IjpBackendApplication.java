@@ -1,13 +1,17 @@
 package ijp;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import ijp.models.AdminUsers;
-import ijp.repository.AdminUsersRepository;
+
+import ijp.models.Role;
+import ijp.models.User;
+import ijp.repository.RoleRepository;
+import ijp.repository.UserRepository;
 
 @SpringBootApplication
 public class IjpBackendApplication extends SpringBootServletInitializer implements CommandLineRunner {
@@ -17,22 +21,44 @@ public class IjpBackendApplication extends SpringBootServletInitializer implemen
 	}
 
 	@Autowired
-	private AdminUsersRepository adminUsersRepository;
+	private Config config;
 
 	@Autowired
-    private Config config;
-	
+	private RoleRepository roleRepository;
+
+	@Autowired
+	private UserRepository userRepository;
+
 	@Override
 	public void run(String... args) throws Exception {
+		Role checkRole = roleRepository.checkRole(1);
+		if (checkRole == null) {
+			Role admin = new Role();
+			admin.setRoleId(1);
+			admin.setRoleDesc("Administrator");
+			admin.setRoleName("Admin");
+			roleRepository.save(admin);
 
-		//System.out.println("admin email:"+config.getAdminEmail());
+			Role Hr = new Role();
+			Hr.setRoleId(2);
+			Hr.setRoleDesc("Hiring Manager");
+			Hr.setRoleName("Hiring_Manager");
+			roleRepository.save(Hr);
 
-		AdminUsers ad = adminUsersRepository.checkEmail(config.getAdminEmail());
-		if (ad==null) {
-			AdminUsers adminUsers = new AdminUsers();
-			adminUsers.setEmail(config.getAdminEmail());
-			adminUsers.setRoles("admin, hiring_manager");
-			adminUsersRepository.save(adminUsers);
+			Role employee = new Role();
+			employee.setRoleId(3);
+			employee.setRoleDesc("Employee");
+			employee.setRoleName("Employee");
+			roleRepository.save(employee);
+
+			User checkUser = userRepository.checkEmail(config.getAdminEmail());
+			if (checkUser == null) {
+				User adminSet = new User();
+				adminSet.setEmail(config.getAdminEmail());
+				adminSet.setRole(admin);
+				adminSet.setName(config.getName());;
+				userRepository.save(adminSet);
+			}
 		}
 	}
 
