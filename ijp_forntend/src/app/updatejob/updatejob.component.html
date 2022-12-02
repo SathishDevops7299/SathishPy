@@ -8,17 +8,19 @@
 
 <body>
   <div class="topsection">
-    <label
-      style="color: #F69659;margin-left: 700px; text-align: end;font-size: 17px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Welcome
-      {{name}}
-      ! </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <button (click)="logout()" style="font-size: 17px; background-color:white;outline: none;border: none;color: #F69659;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;cursor: pointer;
-            ">Logout</button>
-    <div class="image">
-
-    </div>
+    <div class="section3">
+    <img src="../../assets/AriLogo.png" style="height:61px ;background-size: 9em;
+    background-repeat: no-repeat;margin-top: -8px; ;"></div>
+    <div class="section1">
+    <label  style="color: #F69659;font-size: 20px; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+      Welcome {{name}}!
+    </label>
+  </div>
+  <div class="section2">
+    <button (click)="logout()" style="font-size: 18px; background-color:white;outline: none;border: none;color: #F69659;
+           font-family: Verdana, Geneva, Tahoma, sans-serif;cursor: pointer;
+           ">Logout</button>
+  </div>
   </div>
   <div class="LeftPanel">
     <h1
@@ -36,43 +38,6 @@
         routerLink="/history" routerLinkActive="activeTab">HISTORY</label><br>
 
     </div>
-    <!-- <hr style="width: 180px; margin-right: 110px; margin-top: 100px;border:none;background-color:#F69659; height: 1px;">
-        <br><br>
-    
-        <label
-          style="margin-left: 25px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
-          NEED HELP ?</label> <br><br>
-    
-          <i class='fa fa-phone' style='font-size:20px;color:#F69659;margin-left:30px ;'></i>
-    
-        <label style="margin-left: 10px;">+91 1234567890</label> <br><br>
-    
-        <i class="fa fa-envelope" style="font-size:15px;color:#F69659;margin-left: 30px;"></i>
-        <label style="margin-left: 10px;">help@arigs.com</label> <br><br>
-     -->
-     <span>
-      <input type="checkbox" id="check">
-      <label class="chat-btn" for="check">
-        <i class="fa fa-commenting-o comment" (click)="chatClicked()"></i> <i class="fa fa-close close"
-          (click)="chatClosed()"></i> </label>
-      <div class="wrapper" id="wrapper">
-        <div class="header"> <label
-            style="margin-left: 80px;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 600;">
-            ARi BOT ASSISTANT</label>
-        </div>
-        <iframe
-          src='https://webchat.botframework.com/embed/ARI_Chat_Bot?s=OrJObAnesi4.UrqlRm2tyYVzdYFb7Msf3tP0jWajFvO1wU98eDeAc2o'
-          style='min-width: 300px; width: 100%; min-height: 500px'></iframe>
-      </div>
-    </span>
-  </div>
-
-  <div class="JobSearch"><br>
-    <label>JOB SEARCH</label><br><br>
-    <input type="search" placeholder="Search by Keyword"><i style="font-size:15px;margin-left: -1.3em;"
-      class="fa">&#xf002;</i>
-    <input type="search" placeholder="Search by Preferred Location">
-    <input type="button" value="SEARCH">
   </div>
 
   <div class="BodySection">
@@ -133,5 +98,19 @@
 
      </form> 
 
-
+     <span>
+      <input type="checkbox" id="check">
+      <label class="chat-btn" for="check">
+        <i class="fa fa-commenting-o comment" (click)="chatClicked()"></i> <i class="fa fa-close close"
+          (click)="chatClosed()"></i> </label>
+      <div class="wrapper" id="wrapper">
+        <div class="header"> <label
+            style="margin-left: 80px;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 600;">
+            ARi BOT ASSISTANT</label>
+        </div>
+        <iframe
+          src='https://webchat.botframework.com/embed/ARI_Chat_Bot?s=OrJObAnesi4.UrqlRm2tyYVzdYFb7Msf3tP0jWajFvO1wU98eDeAc2o'
+          style='min-width: 300px; width: 100%; min-height: 500px'></iframe>
+      </div>
+    </span>
    

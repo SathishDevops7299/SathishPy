@@ -137,14 +137,11 @@
             <th> MANAGER</th>
             <th>EXPERIENCE (Yr)</th>
             <th>DATE</th>
-
+            <th></th>
            <th style="padding:15px 0 0 20px"><button *ngIf="role==2 || role==1" onclick="location.replace('jobposting')" style="font-family: Verdana, Geneva, Tahoma, sans-serif;height: 30px;width: 110px;background-color: #F69659;
       color: white;border-radius: 2em;outline: none;border: none; cursor: pointer;">Post New Job</button></th>
     
-            <th style="padding:15px 0 0 35px" >
-              <button *ngIf="role==1" onclick="location.replace('addmanager')" style="font-family: Verdana, Geneva, Tahoma, sans-serif;height: 30px;width: 150px;background-color: #F69659;
-      color: white;border-radius: 2em;outline: none;border: none; cursor: pointer;">Add Hiring Manager</button>
-            </th>
+           
 
          </tr>
          <tbody *ngIf="jobPosts.length>0;else norecord">
@@ -166,7 +163,7 @@
             <td style="padding-left:30px ;">{{jobs.jobExperience}}</td>
             <td>{{jobs.jobDate}}</td>
           <!-- </div> -->
-            <td style="text-align: center;padding-top: 10px;">
+            <td style="text-align: center;padding-top: 10px;padding-left: 10px;">
               <div class="dropdown">
                 <button class="dropbtn" ></button>
                 <div class="dropdown-content"><br>
@@ -190,7 +187,7 @@
               </div>
             </td>
             <td style="text-align:left;
-            padding-top: 5px;">
+            padding: 5px 0 0 28px;">
               <button class="button" id="myBtn" (click)="eyeClicked(i)"
                 style="margin-top: 5px;cursor:pointer;border-radius: 50%;border: none;height:30px;width: 30px;"><i
                   class="fa fa-eye"></i></button>
@@ -217,7 +214,7 @@
                 </div>
               </div>
             
-              <button style=" margin-left:76px ;margin-top: 5px;border-radius: 50%;border: none;height:30px;width: 30px;"><i
+              <button style=" margin-left:70px ;margin-top: 5px;border-radius: 50%;border: none;height:30px;width: 30px;"><i
                 class="fa fa-address-book-o"></i></button>
         </td>
         </ng-container>
